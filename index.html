@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="css/flipclock.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="js/flipclock.min.js"></script>
+	</head>
+	<body>
+<div class="valign">
+	<div class="header">The Land & Water Conservation Fund expires in</div>
+	<div class="clockwrapper">
+		<div class="clock" style="margin:2em;"></div>
+	</div>
+	<div class="hashtag">#SaveLWCF</div>
+	<div class="message"></div>
+</div>
+
+	<script type="text/javascript">
+		var clock;
+
+		// Set dates.
+		var futureDate  = new Date("September 31, 2018 11:59:59 PM EDT");
+		var currentDate = new Date();
+
+		// Calculate the difference in seconds between the future and current date
+		var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+		// Calculate day difference and apply class to .clock for extra digit styling.
+		function dayDiff(first, second) {
+			return (second-first)/(1000*60*60*24);
+		}
+
+		if (dayDiff(currentDate, futureDate) < 100) {
+			$('.clock').addClass('twoDayDigits');
+		} else {
+			$('.clock').addClass('threeDayDigits');
+		}
+
+		if(diff < 0) {
+			diff = 0;
+		}
+
+		$(document).ready(function() {
+			var clock;
+
+			clock = $('.clock').FlipClock(diff, {
+				clockFace: 'DailyCounter',
+				countdown: true
+			});
+
+		    clock.setCountdown(true);
+		    clock.start();
+
+		});
+	</script>
+
+	</body>
+</html>
