@@ -437,7 +437,7 @@
 
 /* Aaron's additions here */
 .body {
-  background-color: #eee;
+  background-color: #000;
 }
 
 .outer {
@@ -447,7 +447,7 @@
   right:0px;
   bottom:0px;
   color:#eee;
-  background-color:#555;
+  background-color:#000;
 }
 
 .inner {
