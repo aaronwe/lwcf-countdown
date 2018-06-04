@@ -3,9 +3,10 @@
 <head>
 	<link rel="stylesheet" href="css/flipclock.css">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script> -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/underscore-min.js"></script>
 	<script src="js/flipclock.min.js"></script>
   <script src="js/resize.js"></script>
 </head>
@@ -14,9 +15,11 @@
 	<div class="outer" id="outer">
 		<div class="inner" id="inner">
 			<div class="valign">
-			<div class="header">The Land &amp; Water Conservation Fund expires in</div>
+			<div class="header">The <span class="highlight">Land &amp; Water
+				Conservation Fund</span></div>
+			<div class="subhead">expires in</div>
 			<div class="clockwrapper">
-				<div class="clock" style="margin:2em;"></div>
+				<div class="clock"></div>
 			</div>
 			<div class="hashtag">#SaveLWCF</div>
 			<div class="message"></div>

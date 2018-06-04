@@ -2,7 +2,7 @@ var pageWidth, pageHeight;
 
 var basePage = {
   width: 800,
-  height: 600,
+  height: 400,
   scale: 1,
   scaleX: 1,
   scaleY: 1

@@ -154,12 +154,12 @@
   z-index: 1;
   width: 100%;
   height: 200%;
-  color: #ccc;
-  text-shadow: 0 1px 2px #000;
+  color: #060606;
+  /* text-shadow: 0 1px 2px #000; */
   text-align: center;
-  background-color: #333;
+  background-color: #eee;
   border-radius: 6px;
-  font-size: 70px; }
+  font-size: 80px; }
 
 .flip-clock-wrapper ul li a div.up div.inn {
   top: 0; }
@@ -191,7 +191,7 @@
 
 .flip-clock-dot {
   display: block;
-  background: #323434;
+  background: #eee;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -203,7 +203,7 @@
   position: absolute;
   top: -1.5em;
   right: -86px;
-  color: black;
+  color: ccc;
   text-shadow: none; }
 
 .threeDayDigits .flip-clock-divider.days .flip-clock-label {
@@ -447,18 +447,18 @@
   right:0px;
   bottom:0px;
   color:#eee;
-  background-color:#eee;
+  background-color:#555;
 }
 
 .inner {
   text-align: center;
-  background-color: #eee;
+  background-color: #000;
   width: 800px;
-  height: 600px;
+  height: 400px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transition: all 200ms ease-in-out !important;
+  transition: all 500ms ease-in-out !important;
   transform: translate(-50%, -50%);
   transform-origin: top left;
 }
@@ -469,26 +469,40 @@
   transform: translateY(-50%);
 }
 
-.hashtag {
-  align-content: center;
-  text-align: center;
-  color: #444;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  font-weight: 200;
-  font-size: 80px;
-}
-
 .header {
   align-content: center;
   text-align: center;
-  color: #444;
+  color: #eee;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 40px;
+}
+
+.highlight {
+  color: #b6ddfa;
   font-weight: 800;
-  font-size: 30px;
-  padding-bottom: 10px;
+}
+
+.subhead {
+  align-content: center;
+  text-align: center;
+  color: #eee;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 24px;
+  padding-bottom: 20px;
 }
 
 .clockwrapper {
   zoom: 1.0;
   text-align: center;
+}
+
+.hashtag {
+  align-content: center;
+  text-align: center;
+  color: #e1f0cc;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 200;
+  font-size: 110px;
 }
