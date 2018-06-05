@@ -444,7 +444,6 @@ html {
 body, html {
   display: block;
   background-color: #000;
-/*  background: linear-gradient(to bottom, #333 0%, #000 100%); !important */
   padding: 0;
   margin: 0;
 }
