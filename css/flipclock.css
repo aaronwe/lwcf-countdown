@@ -1,6 +1,6 @@
 /* Get the bourbon mixin from http://bourbon.io */
 /* Reset */
-/* minor edit */
+/* another minor edit */
 .flip-clock-wrapper * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -487,7 +487,8 @@ body, html {
 .highlight {
   color: #b6ddfa;
   font-weight: 800;
-  font-size: 135%
+  font-size: 150%;
+  line-height: 42px;
 }
 
 .subhead {
