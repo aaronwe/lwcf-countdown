@@ -466,7 +466,7 @@ body, html {
 
 @media screen and (max-width: 700px) {
   .flip-clock-wrapper {
-    zoom: 0.7;
+    zoom: 0.8;
   }
 }
 
@@ -478,6 +478,6 @@ body, html {
 
 @media screen and (max-width: 500px) {
   .flip-clock-wrapper {
-    zoom: 0.5;
+    zoom: 0.4;
   }
 }
