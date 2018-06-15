@@ -192,7 +192,7 @@
 
 .flip-clock-dot {
   display: block;
-  background: #eee;
+  background: #222;
   width: 10px;
   height: 10px;
   position: absolute;
@@ -204,7 +204,7 @@
   position: absolute;
   top: -1.5em;
   right: -86px;
-  color: ccc;
+  color: #666;
   text-shadow: none; }
 
 .threeDayDigits .flip-clock-divider.days .flip-clock-label {
