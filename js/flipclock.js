@@ -405,6 +405,14 @@ var FlipClock;
 				dots = '';
 			}
 
+			if(excludeDots == 'comma') {
+				dots = '<span class="'+this.factory.classes.comma+'"></span>'
+			}
+
+			if(excludeDots == 'dollar') {
+				dots = '<span class="'+this.factory.classes.dollar+'"></span>'
+			}
+
 			label = this.factory.localize(label);
 
 			var html = [

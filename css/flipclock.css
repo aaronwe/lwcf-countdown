@@ -188,7 +188,8 @@
   height: 100px; }
 
 .flip-clock-divider:first-child {
-  width: 0; }
+   width: 0;
+  }
 
 .flip-clock-dot {
   display: block;
@@ -201,26 +202,30 @@
   left: 5px; }
 
 .flip-clock-comma {
-  content: ',';
-  font-size: 40px;
+  margin-left: -4px;
+  text-overflow: clip;
+  font-size: 100px;
   display: inline-block;
-  color: #eee;
-  width: 20px;
-  height: 100px;
-  position: relative;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  color: #ccc;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.flip-clock-comma::before {
+  content: ",";
 }
 
 .flip-clock-dollar {
-  content: '$';
-  font-size: 40px;
+  margin-left: -51px;
+  margin-top: -5px;
+  text-overflow: clip;
+  font-size: 90px;
   display: inline-block;
-  color: #eee;
-  width: 20px !important;
-  height: 100px;
-  position: relative;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  left: 5px;
+  color: #ccc;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.flip-clock-dollar::before {
+  content: '$';
 }
 
 .flip-clock-divider .flip-clock-label {

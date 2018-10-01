@@ -1,128 +1,145 @@
 (function($) {
 
-  	/**
-  	 * Dollar Clock Face
-  	 *
-  	 * This class will generate a dollar flip counter, a la the
-     * U.S. national debt clock.
-     * clock.increment() and clock.decrement() have been added.
-  	 *
-  	 * @param  object  The parent FlipClock.Factory object
-  	 * @param  object  An object of properties to override the default
-  	 */
+   /**
+   * Dollar Clock Face
+   *
+   * This class will generate a dollar flip counter, a la the
+   * U.S. national debt clock.
+   * clock.increment() and clock.decrement() have been added.
+   *
+   * @param  object  The parent FlipClock.Factory object
+   * @param  object  An object of properties to override the default
+   */
 
-  	FlipClock.DollarFace = FlipClock.Face.extend({
+   FlipClock.DollarFace = FlipClock.Face.extend({
 
-  		/**
-  		 * Tells the counter clock face if it should auto-increment
-  		 */
+      /**
+      * Tells the counter clock face if it should auto-increment
+      */
 
-  		shouldAutoIncrement: false,
+      shouldAutoIncrement: false,
 
-  		/**
-  		 * Constructor
-  		 *
-  		 * @param  object  The parent FlipClock.Factory object
-  		 * @param  object  An object of properties to override the default
-  		 */
+      /**
+      * Constructor
+      *
+      * @param  object  The parent FlipClock.Factory object
+      * @param  object  An object of properties to override the default
+      */
 
-  		constructor: function(factory, options) {
+      constructor: function(factory, options) {
 
-  			if(typeof options != "object") {
-  				options = {};
-  			}
+         if(typeof options != "object") {
+            options = {};
+         }
 
-  			factory.autoStart = options.autoStart ? true : false;
+         factory.autoStart = options.autoStart ? true : false;
 
-  			if(options.autoStart) {
-  				this.shouldAutoIncrement = true;
-  			}
+         if(options.autoStart) {
+            this.shouldAutoIncrement = true;
+         }
 
-  			factory.increment = function(inc) {
-  				factory.countdown = false;
-  				factory.setTime(factory.getTime().getTimeSeconds() + inc);
-  			};
+         factory.increment = function(inc) {
+            factory.countdown = false;
+            factory.setTime(factory.getTime().getTimeSeconds() + inc);
+         };
 
-  			factory.decrement = function() {
-  				factory.countdown = true;
-  				var time = factory.getTime().getTimeSeconds();
-  				if(time > 0) {
-  					factory.setTime(time - 1);
-  				}
-  			};
+         factory.decrement = function() {
+            factory.countdown = true;
+            var time = factory.getTime().getTimeSeconds();
+            if(time > 0) {
+               factory.setTime(time - 1);
+            }
+         };
 
-  			factory.setValue = function(digits) {
-  				factory.setTime(digits);
-  			};
+         factory.setValue = function(digits) {
+            factory.setTime(digits);
+         };
 
-  			factory.setCounter = function(digits) {
-  				factory.setTime(digits);
-  			};
+         factory.setCounter = function(digits) {
+            factory.setTime(digits);
+         };
 
-  			this.base(factory, options);
-  		},
+         this.base(factory, options);
+      },
 
-  		/**
-  		 * Build the clock face
-  		 */
+      /**
+      * Build the clock face
+      */
 
-  		build: function() {
-  			var t        = this;
-  			var children = this.factory.$el.find('ul');
-  			var time 	 = this.factory.getTime().digitize([this.factory.getTime().time]);
+      build: function() {
+         var t        = this;
+         var children = this.factory.$el.find('ul');
+         var time 	 = this.factory.getTime().digitize([this.factory.getTime().time]);
 
-  			if(time.length > children.length) {
-  				$.each(time, function(i, digit) {
-  					var list = t.createList(digit);
+         if(time.length > children.length) {
+            $.each(time, function(i, digit) {
+               var list = t.createList(digit);
 
-  					list.select(digit);
-  				});
+               list.select(digit);
+            });
 
-  			}
+         }
 
-  			$.each(this.lists, function(i, list) {
-  				list.play();
-  			});
+         $.each(this.lists, function(i, list) {
+            list.play();
+         });
 
-         this.createDivider('',"flip-clock-comma", true);
-         this.createDivider('','flip-clock-comma', true);
-         this.createDivider('','flip-clock-dollar', true);
+         // create dollar sign
+         this.createDivider('',"dollar", "dollar");
+         $(this.dividers[0]).insertBefore(this.lists[0].$el);
 
-         $(this.dividers[0]).insertBefore(this.lists[this.lists.length - 3].$el);
-         $(this.dividers[1]).insertBefore(this.lists[this.lists.length - 6].$el);
-         $(this.dividers[2]).insertBefore(this.lists[0].$el);
+         // create commas, every 3 digits
+         if(time.length > 3){
+            this.createDivider('',"comma", "comma");
+            $(this.dividers[1]).insertBefore(this.lists[this.lists.length - 3].$el);
+         }
 
-  			this.base();
-  		},
+         if(time.length > 6){
+            this.createDivider('',"comma", "comma");
+            $(this.dividers[2]).insertBefore(this.lists[this.lists.length - 6].$el);
+         }
 
-  		/**
-  		 * Flip the clock face
-  		 */
+         if(time.length > 9){
+            this.createDivider('',"comma", "comma");
+            $(this.dividers[3]).insertBefore(this.lists[this.lists.length - 9].$el);
+         }
 
-  		flip: function(time, doNotAddPlayClass) {
-  			if(this.shouldAutoIncrement) {
-  				this.autoIncrement();
-  			}
+         if(time.length > 12){
+            this.createDivider('',"comma", true);
+            $(this.dividers[4]).insertBefore(this.lists[this.lists.length - 12].$el);
+         }
 
-  			if(!time) {
-  				time = this.factory.getTime().digitize([this.factory.getTime().time]);
-  			}
+         this.base();
+      },
 
-  			this.base(time, doNotAddPlayClass);
-  		},
+      /**
+      * Flip the clock face
+      */
 
-  		/**
-  		 * Reset the clock face
-  		 */
+      flip: function(time, doNotAddPlayClass) {
+         if(this.shouldAutoIncrement) {
+            this.autoIncrement();
+         }
 
-  		reset: function() {
-  			this.factory.time = new FlipClock.Time(
-  				this.factory,
-  				this.factory.original ? Math.round(this.factory.original) : 0
-  			);
+         if(!time) {
+            time = this.factory.getTime().digitize([this.factory.getTime().time]);
+         }
 
-  			this.flip();
-  		}
-  	});
+         this.base(time, doNotAddPlayClass);
+      },
 
-  }(jQuery));
+      /**
+      * Reset the clock face
+      */
+
+      reset: function() {
+         this.factory.time = new FlipClock.Time(
+            this.factory,
+            this.factory.original ? Math.round(this.factory.original) : 0
+         );
+
+         this.flip();
+      }
+   });
+
+}(jQuery));
