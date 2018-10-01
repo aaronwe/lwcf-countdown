@@ -217,6 +217,33 @@
 .flip-clock-divider.seconds .flip-clock-label {
   right: -91px; }
 
+  .flip-clock-comma {
+    margin-left: -4px;
+    text-overflow: clip;
+    font-size: 100px;
+    display: inline-block;
+    color: #444;
+    // text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .flip-clock-comma::before {
+    content: ",";
+  }
+
+  .flip-clock-dollar {
+    margin-left: -51px;
+    margin-top: -5px;
+    text-overflow: clip;
+    font-size: 90px;
+    display: inline-block;
+    color: #444;
+    // text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  .flip-clock-dollar::before {
+    content: '$';
+  }
+
 .flip-clock-dot.top {
   top: 30px; }
 
