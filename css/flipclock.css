@@ -511,7 +511,7 @@ body, html {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 200;
   font-size: 32px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   padding-top: 10px;
   line-height: 38px;
 }
@@ -545,4 +545,5 @@ body, html {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 200;
   font-size: 110px;
+  margin-top: -20px;
 }
