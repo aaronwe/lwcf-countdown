@@ -200,6 +200,29 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   left: 5px; }
 
+.flip-clock-comma {
+  content: ',';
+  font-size: 40px;
+  display: inline-block;
+  color: #eee;
+  width: 20px;
+  height: 100px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.flip-clock-dollar {
+  content: '$';
+  font-size: 40px;
+  display: inline-block;
+  color: #eee;
+  width: 20px !important;
+  height: 100px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  left: 5px;
+}
+
 .flip-clock-divider .flip-clock-label {
   position: absolute;
   top: -1.5em;
