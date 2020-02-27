@@ -485,32 +485,38 @@ body, html {
   height: auto;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .flip-clock-wrapper {
     zoom: 0.9;
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
   .flip-clock-wrapper {
     zoom: 0.8;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
   .flip-clock-wrapper {
-    zoom: 0.6;
+    zoom: 0.7;
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
   .flip-clock-wrapper {
     zoom: 0.5;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .flip-clock-wrapper {
     zoom: 0.4;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .flip-clock-wrapper {
+    zoom: 0.3;
   }
 }
